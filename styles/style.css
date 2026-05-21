@@ -919,13 +919,15 @@ footer {
 /* HOTSPOT */
 .hotspot {
   position: absolute;
-    z-index: 100;
+  z-index: 1000;
 
 }
 
 
 /* ICON */
 .icon {
+  position: relative;
+
   width: 30px;
   height: 30px;
 
@@ -944,14 +946,17 @@ footer {
 
   transition: 0.3s ease;
 
-    z-index: 99;
+  z-index: 1;
+
+  overflow: visible;
+
 
 
 }
 
 /* RADAR EFFECT */
 .icon::before,
-.icon::after{
+.icon::after {
   content: '';
 
   position: absolute;
@@ -963,17 +968,17 @@ footer {
 
   background: rgb(238, 0, 0);
 
-  z-index: -1;
-
   animation: radar 2s infinite;
 
-    z-index: -1;
+  z-index: -10;
+  pointer-events: none;
+
 
 }
 
 
 /* DELAY */
-.icon::after{
+.icon::after {
   animation-delay: 1s;
 }
 
@@ -1010,8 +1015,9 @@ footer {
   visibility: hidden;
 
   transition: 0.3s ease;
+  pointer-events: none;
 
-  z-index: 10;
+  z-index: 9999;
 }
 
 
@@ -1019,8 +1025,12 @@ footer {
 .hotspot:hover .popup {
   opacity: 1;
   visibility: visible;
+    z-index: 99999;
 }
 
+.hotspot:hover{
+  z-index: 99999;
+}
 
 /* POPUP TEXT */
 .popup h3 {
@@ -1170,5 +1180,3 @@ footer {
   top: -20px;
   left: 80px;
 }
-
-
