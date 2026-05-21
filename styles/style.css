@@ -225,6 +225,7 @@ nav ul li a:hover::after {
 }
 
 
+
 /* HERO ==========================================================*/
 #hero {
   height: 500px;
@@ -885,7 +886,7 @@ footer {
 /* LAPTOP ==========================================================*/
 .laptop {
   width: 100%;
-  min-height: 100vh;
+  min-height: 10vh;
 
   display: flex;
   justify-content: center;
@@ -898,30 +899,37 @@ footer {
 /* CONTAINER */
 .laptop-container {
   position: relative;
-  width: 900px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 800px;
+
+  display: flex;
+  justify-content: center;
 }
 
 
 /* IMAGE */
 .laptop-image {
   width: 100%;
-  display: block;
-}
+  max-width: 700px;
 
+  display: block;
+  margin: 0 auto;
+}
 
 /* HOTSPOT */
 .hotspot {
   position: absolute;
+    z-index: 100;
+
 }
 
 
 /* ICON */
 .icon {
-  width: 55px;
-  height: 55px;
+  width: 30px;
+  height: 30px;
 
-  background: #21476b;
+  background: var(--primaryColor);
 
   border-radius: 50%;
 
@@ -936,9 +944,37 @@ footer {
 
   transition: 0.3s ease;
 
-  box-shadow:
-    0 0 0 10px rgba(33, 71, 107, 0.15),
-    0 0 20px rgba(33, 71, 107, 0.4);
+    z-index: 99;
+
+
+}
+
+/* RADAR EFFECT */
+.icon::before,
+.icon::after{
+  content: '';
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  background: rgb(238, 0, 0);
+
+  z-index: -1;
+
+  animation: radar 2s infinite;
+
+    z-index: -1;
+
+}
+
+
+/* DELAY */
+.icon::after{
+  animation-delay: 1s;
 }
 
 .icon img {
@@ -946,6 +982,8 @@ footer {
   height: 20px;
   object-fit: contain;
 }
+
+
 
 /* HOVER */
 .icon:hover {
@@ -960,7 +998,7 @@ footer {
 
   width: 220px;
 
-  background: white;
+  background: var(--secondaryColor);
 
   padding: 15px;
 
@@ -999,26 +1037,26 @@ footer {
 
 
 /* ========================= */
-/* POSITION HOTSPOT */
+/* POSITION ICON LAPTOP */
 /* ========================= */
 
 
 /* CAMERA */
 .camera {
-  top: 7%;
-  left: 48%;
+  top: 0.5%;
+  left: 35%;
 }
 
 .camera .popup {
-  bottom: 70px;
-  left: -80px;
+  top: -20px;
+  left: 80px;
 }
 
 
 /* SCREEN */
 .screen {
-  top: 32%;
-  left: 44%;
+  top: 25%;
+  left: 37%;
 }
 
 .screen .popup {
@@ -1029,8 +1067,8 @@ footer {
 
 /* KEYBOARD */
 .keyboard {
-  bottom: 28%;
-  left: 38%;
+  bottom: 25%;
+  left: 45%;
 }
 
 .keyboard .popup {
@@ -1041,8 +1079,8 @@ footer {
 
 /* TOUCHPAD */
 .touchpad {
-  bottom: 18%;
-  left: 50%;
+  bottom: 15%;
+  left: 60%;
 }
 
 .touchpad .popup {
@@ -1051,13 +1089,13 @@ footer {
 }
 
 
-/* SSD */
-.ssd {
-  bottom: 10%;
-  left: 30%;
+/* STORAGE */
+.storage {
+  bottom: 8%;
+  left: 45%;
 }
 
-.ssd .popup {
+.storage .popup {
   bottom: 70px;
   left: -40px;
 }
@@ -1065,8 +1103,8 @@ footer {
 
 /* RAM */
 .ram {
-  bottom: 20%;
-  right: 26%;
+  bottom: 23%;
+  right: 22%;
 }
 
 .ram .popup {
@@ -1077,8 +1115,8 @@ footer {
 
 /* BATTERY */
 .battery {
-  bottom: 6%;
-  right: 35%;
+  bottom: 38%;
+  right: 45%;
 }
 
 .battery .popup {
@@ -1089,8 +1127,8 @@ footer {
 
 /* WIFI */
 .wifi {
-  top: 45%;
-  right: 18%;
+  top: 63%;
+  right: 65%;
 }
 
 .wifi .popup {
@@ -1101,8 +1139,8 @@ footer {
 
 /* USB */
 .usb {
-  top: 65%;
-  left: 8%;
+  top: 73%;
+  left: 18%;
 }
 
 .usb .popup {
@@ -1113,8 +1151,8 @@ footer {
 
 /* SPEAKER */
 .speaker {
-  bottom: 28%;
-  right: 12%;
+  bottom: 17%;
+  right: 70%;
 }
 
 .speaker .popup {
@@ -1122,23 +1160,10 @@ footer {
   left: -150px;
 }
 
-
-/* PROCESSOR */
-.processor {
-  bottom: 24%;
-  left: 58%;
-}
-
-.processor .popup {
-  bottom: 70px;
-  left: -90px;
-}
-
-
 /* FAN */
 .fan {
-  top: 55%;
-  left: 70%;
+  top: 57%;
+  left: 68%;
 }
 
 .fan .popup {
@@ -1147,18 +1172,3 @@ footer {
 }
 
 
-
-/* RESPONSIVE */
-@media(max-width:768px) {
-
-  .icon {
-    width: 45px;
-    height: 45px;
-    font-size: 16px;
-  }
-
-  .popup {
-    width: 180px;
-  }
-
-}

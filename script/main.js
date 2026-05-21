@@ -1,6 +1,5 @@
 
 // Swipper
-
 var swiper = new Swiper(".testimonialSwiper", {
 
       loop: true,
