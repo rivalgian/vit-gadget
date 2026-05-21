@@ -12,7 +12,9 @@
   --primaryIconColorHover: #1d4ed8;
 
 }
-html, body{
+
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -230,7 +232,7 @@ nav ul li a:hover::after {
 }
 
 /* HAMBURGER */
-.menu-toggle{
+.menu-toggle {
   display: none;
 
   flex-direction: column;
@@ -239,10 +241,10 @@ nav ul li a:hover::after {
 
   cursor: pointer;
 
-  z-index: 2000;
+  z-index: 100000;
 }
 
-.menu-toggle span{
+.menu-toggle span {
   width: 25px;
   height: 2px;
 
@@ -251,81 +253,6 @@ nav ul li a:hover::after {
   border-radius: 10px;
 
   transition: 0.3s ease;
-}
-
-
-/* ========================= */
-/* MOBILE RESPONSIVE */
-/* ========================= */
-
-@media(max-width:768px){
-
-  /* NAVBAR */
-  .nav{
-    padding: 1rem 1.2rem;
-
-  width: calc(100% - 20px);
-
-    top: 15px;
-
-    border-radius: 16px;
-  }
-
-  /* LOGO */
-  .logo img{
-    width: 42px;
-  }
-
-  /* SHOW HAMBURGER */
-  .menu-toggle{
-    display: flex;
-  }
-
-  /* NAVIGATION */
-  nav{
-    position: fixed;
-
-    top: 0;
-    right: -260%;
-
-    width: 260px;
-    height: 100vh;
-
-    background: rgba(10, 10, 10, 0.92);
-
-    backdrop-filter: blur(18px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: 0.4s ease;
-
-    z-index: 1500;
-  }
-
-  /* ACTIVE MENU */
-  nav.active{
-    right: 0;
-  }
-
-  /* MENU LIST */
-  .nav ul{
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  /* MENU LINK */
-  nav ul li a{
-    font-size: 18px;
-    color: white;
-  }
-
-  /* UNDERLINE */
-  nav ul li a::after{
-    bottom: -8px;
-  }
-
 }
 
 /* HERO ==========================================================*/
@@ -562,10 +489,9 @@ nav ul li a:hover::after {
 /* HOTSPOT */
 .hotspot {
   position: absolute;
-  z-index: 1000;
+  z-index: 10;
 
 }
-
 
 /* ICON */
 .icon {
@@ -668,10 +594,10 @@ nav ul li a:hover::after {
 .hotspot:hover .popup {
   opacity: 1;
   visibility: visible;
-    z-index: 99999;
+  z-index: 99999;
 }
 
-.hotspot:hover{
+.hotspot:hover {
   z-index: 99999;
 }
 
@@ -823,6 +749,7 @@ nav ul li a:hover::after {
   top: -20px;
   left: 80px;
 }
+
 /* SERVICES ==========================================================*/
 
 .services {
@@ -1281,4 +1208,3 @@ footer {
 .footer-icons a:hover svg {
   fill: #000;
 }
-

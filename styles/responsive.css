@@ -4,6 +4,78 @@
   }
 }
 
+/* NAVBAR ========================= */
+
+@media(max-width:768px) {
+
+  /* NAVBAR */
+  .nav {
+    padding: 1rem 1.2rem;
+
+    width: calc(100% - 20px);
+
+    top: 15px;
+
+    border-radius: 16px;
+  }
+
+  /* LOGO */
+  .logo img {
+    width: 42px;
+  }
+
+  /* SHOW HAMBURGER */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* NAVIGATION */
+  nav {
+    position: fixed;
+
+    top: 0;
+    right: -260%;
+
+    width: 260px;
+    height: 100vh;
+
+    background: rgba(10, 10, 10, 0.92);
+
+    backdrop-filter: blur(18px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.4s ease;
+
+    z-index: 99999;
+  }
+
+  /* ACTIVE MENU */
+  nav.active {
+    right: 0;
+  }
+
+  /* MENU LIST */
+  .nav ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* MENU LINK */
+  nav ul li a {
+    font-size: 18px;
+    color: white;
+  }
+
+  /* UNDERLINE */
+  nav ul li a::after {
+    bottom: -8px;
+  }
+
+}
+
 /* ONSITE REMOTE ==========================================================*/
 
 @media(max-width: 992px) {
