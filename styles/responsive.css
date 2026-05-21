@@ -1,0 +1,108 @@
+@media screen and (max-width: 1400px) {
+  .main-container {
+    width: 90%;
+  }
+}
+
+/* ONSITE REMOTE ==========================================================*/
+
+@media(max-width: 992px) {
+
+  .service-card1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* remote tetap gambar dibawah */
+  .service-card1:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+
+  .service-content1 h2 {
+    font-size: 38px;
+  }
+
+}
+
+/* TESTIMONIAL ==========================================================*/
+
+@media(max-width: 768px) {
+
+  .section-title h2 {
+    font-size: 38px;
+  }
+
+}
+
+@media(max-width: 576px) {
+
+  #testimonials {
+    padding: 80px 15px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  .testimonial-card {
+    padding: 25px;
+  }
+
+}
+
+/* GALLERY ==========================================================*/
+
+@media(max-width: 768px) {
+
+  .maps-title h2 {
+    font-size: 38px;
+  }
+
+  .maps-container iframe {
+    height: 400px;
+  }
+
+}
+
+@media(max-width: 576px) {
+
+  #maps {
+    padding: 80px 15px;
+  }
+
+  .maps-title h2 {
+    font-size: 30px;
+  }
+
+}
+
+/* CONTACT  ==========================================================*/
+@media(max-width: 992px) {
+
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+}
+
+@media(max-width: 576px) {
+
+  #contact {
+    padding: 80px 15px;
+  }
+
+  .section-title h2 {
+    font-size: 34px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 25px;
+    border-radius: 24px;
+  }
+
+  .contact-info h3 {
+    font-size: 32px;
+  }
+
+}
