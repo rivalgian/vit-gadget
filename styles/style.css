@@ -997,6 +997,148 @@ nav ul li a:hover::after {
   border: none;
 }
 
+/* FAQ ========================================================== */
+
+#faq{
+  padding: 100px 20px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f8fafc,
+      #ffffff
+    );
+}
+
+
+/* TITLE */
+.faq-title{
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+.faq-title h2{
+  font-size: 42px;
+  font-weight: 700;
+
+  color: #111827;
+
+  margin-bottom: 14px;
+}
+
+.faq-title p{
+  max-width: 700px;
+
+  margin: auto;
+
+  color: #6b7280;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.faq-title b{
+  color: #2563eb;
+}
+
+
+/* ACCORDION */
+.faq-accordion{
+  max-width: 900px;
+
+  margin: auto;
+}
+
+
+/* ITEM */
+.accordion-item{
+  border: none !important;
+
+  margin-bottom: 18px;
+
+  border-radius: 18px !important;
+
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.9);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+
+  transition: 0.3s ease;
+}
+
+
+/* HOVER */
+.accordion-item:hover{
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.08);
+}
+
+
+/* BUTTON */
+.accordion-button{
+  padding: 24px 28px !important;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #111827 !important;
+
+  background: transparent !important;
+
+  box-shadow: none !important;
+}
+
+
+/* ACTIVE */
+.accordion-button:not(.collapsed){
+  background: #eff6ff !important;
+
+  color: #2563eb !important;
+}
+
+
+/* REMOVE BORDER */
+.accordion-button:focus{
+  box-shadow: none !important;
+}
+
+
+/* BODY */
+.accordion-body{
+  padding: 0 28px 28px;
+
+  font-size: 15px;
+  line-height: 1.9;
+
+  color: #4b5563;
+}
+
+
+/* LIST */
+.accordion-body ul{
+  margin-top: 14px;
+  margin-bottom: 18px;
+
+  padding-left: 22px;
+}
+
+.accordion-body li{
+  margin-bottom: 10px;
+}
+
+
+/* ICON */
+.accordion-button::after{
+  transform: scale(0.9);
+}
+
 /* CONTACT ==========================================================*/
 
 #contact {

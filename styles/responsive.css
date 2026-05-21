@@ -209,6 +209,56 @@
 
 }
 
+/* FAQ ========================================================== */
+@media(max-width:768px){
+
+  #faq{
+    padding: 70px 15px;
+  }
+
+  /* TITLE */
+  .faq-title{
+    margin-bottom: 40px;
+  }
+
+  .faq-title h2{
+    font-size: 32px;
+  }
+
+  .faq-title p{
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ITEM */
+  .accordion-item{
+    border-radius: 14px !important;
+
+    margin-bottom: 14px;
+  }
+
+  /* BUTTON */
+  .accordion-button{
+    padding: 18px 18px !important;
+
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* BODY */
+  .accordion-body{
+    padding: 0 18px 20px;
+
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .accordion-body ul{
+    padding-left: 18px;
+  }
+
+}
+
 /* CONTACT  ==========================================================*/
 @media(max-width: 992px) {
 
