@@ -622,8 +622,8 @@ nav ul li a:hover::after {
 
 /* CAMERA */
 .camera {
-  top: 0.5%;
-  left: 35%;
+  top: 0%;
+  left: 32%;
 }
 
 .camera .popup {
@@ -682,8 +682,8 @@ nav ul li a:hover::after {
 
 /* RAM */
 .ram {
-  bottom: 23%;
-  right: 22%;
+  bottom: 20%;
+  right: 15%;
 }
 
 .ram .popup {
@@ -730,8 +730,8 @@ nav ul li a:hover::after {
 
 /* SPEAKER */
 .speaker {
-  bottom: 17%;
-  right: 70%;
+  bottom: 8%;
+  right: 60%;
 }
 
 .speaker .popup {
@@ -1000,7 +1000,7 @@ nav ul li a:hover::after {
 /* FAQ ========================================================== */
 
 #faq{
-  padding: 100px 20px;
+  padding: 10px;
 
   background:
     linear-gradient(

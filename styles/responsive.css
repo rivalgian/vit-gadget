@@ -76,6 +76,65 @@
 
 }
 
+/* Hero ==========================================================*/
+
+/* Versi Mobile */
+
+@media screen and (max-width: 576px) {
+  #hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    min-height: auto;
+    padding: 50px 15px;
+    gap: 30px;
+  }
+
+  .hero-left {
+    flex: 1 1 100%;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-left p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 220px;
+    max-width: 100%;
+    padding: 12px 18px;
+    font-size: 0.88rem;
+    border-radius: 10px;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* logo */
+  .hero-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-right img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+
 /* ONSITE REMOTE ==========================================================*/
 
 @media(max-width: 992px) {
@@ -157,6 +216,46 @@
 
 }
 
+/* SERVICES ==========================================================*/
+
+@media screen and (max-width: 576px) {
+  #services {
+    padding: 50px 14px;
+  }
+
+  .services .section-title {
+    margin-bottom: 28px;
+  }
+
+  .services .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .services .section-title p {
+    font-size: 0.9rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .service-card {
+    padding: 16px 15px;
+    border-radius: 14px;
+  }
+
+  .service-card h3 {
+    font-size: 0.98rem;
+    margin-bottom: 6px;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
 /* TESTIMONIAL ==========================================================*/
 
 @media(max-width: 768px) {
@@ -184,6 +283,50 @@
 }
 
 /* GALLERY ==========================================================*/
+
+@media screen and (max-width: 576px) {
+  #gallery {
+    padding: 12px 12px;
+  }
+
+  #gallery .section-title {
+    margin-bottom: 25px;
+  }
+
+  #gallery .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  #gallery .section-title p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  #carouselExampleIndicators {
+    border-radius: 16px;
+  }
+
+  #carouselExampleIndicators .carousel-item img {
+    height: 220px;
+    object-fit: cover;
+  }
+
+  /* Button */
+  #carouselExampleIndicators .carousel-control-prev-icon,
+  #carouselExampleIndicators .carousel-control-next-icon {
+    padding: 14px;
+  }
+
+  /* Indikator */
+  #carouselExampleIndicators .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+
+}
+
+/* MAPS ==========================================================*/
 
 @media(max-width: 768px) {
 
