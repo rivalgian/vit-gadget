@@ -736,7 +736,7 @@ nav ul li a:hover::after {
 
 .speaker .popup {
   bottom: 70px;
-  left: -150px;
+  left: -50px;
 }
 
 /* FAN */
@@ -746,8 +746,8 @@ nav ul li a:hover::after {
 }
 
 .fan .popup {
-  top: -20px;
-  left: 80px;
+  top: 30px;
+  right: 20px;
 }
 
 /* SERVICES ==========================================================*/
