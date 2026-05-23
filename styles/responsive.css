@@ -158,58 +158,59 @@
 
 /* LAPTOP ==========================================================*/
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-  .laptop{
+  .laptop {
     padding: 15px;
   }
 
-  .laptop-container{
+  .laptop-container {
     width: 100%;
   }
 
-  .laptop-image{
+  .laptop-image {
     width: 100%;
   }
 
-  .icon{
+  .icon {
     width: 28px;
     height: 28px;
   }
 
-  .icon img{
+  .icon img {
     width: 14px;
     height: 14px;
   }
 
-  .popup{
+  .popup {
     width: 170px;
     padding: 12px;
   }
 
-  .popup h3{
+  .popup h3 {
     font-size: 13px;
   }
 
-  .popup p{
+  .popup p {
     font-size: 11px;
     line-height: 1.4;
   }
 
 }
-@keyframes radar{
 
-  0%{
+@keyframes radar {
+
+  0% {
     transform: scale(1);
     opacity: 0.7;
   }
 
-  70%{
+  70% {
     transform: scale(2.2);
     opacity: 0;
   }
 
-  100%{
+  100% {
     transform: scale(2.5);
     opacity: 0;
   }
@@ -353,35 +354,35 @@
 }
 
 /* FAQ ========================================================== */
-@media(max-width:768px){
+@media(max-width:768px) {
 
-  #faq{
+  #faq {
     padding: 70px 15px;
   }
 
   /* TITLE */
-  .faq-title{
+  .faq-title {
     margin-bottom: 40px;
   }
 
-  .faq-title h2{
+  .faq-title h2 {
     font-size: 32px;
   }
 
-  .faq-title p{
+  .faq-title p {
     font-size: 14px;
     line-height: 1.7;
   }
 
   /* ITEM */
-  .accordion-item{
+  .accordion-item {
     border-radius: 14px !important;
 
     margin-bottom: 14px;
   }
 
   /* BUTTON */
-  .accordion-button{
+  .accordion-button {
     padding: 18px 18px !important;
 
     font-size: 14px;
@@ -389,14 +390,14 @@
   }
 
   /* BODY */
-  .accordion-body{
+  .accordion-body {
     padding: 0 18px 20px;
 
     font-size: 13px;
     line-height: 1.8;
   }
 
-  .accordion-body ul{
+  .accordion-body ul {
     padding-left: 18px;
   }
 
@@ -433,3 +434,49 @@
 
 }
 
+/* CLIENTS  ==========================================================*/
+
+/* Animation */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 5));
+  }
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+
+  #clients {
+    padding: 70px 0;
+  }
+
+  .section-title h2 {
+    font-size: 34px;
+    line-height: 1.3;
+  }
+
+  .section-title p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .client-item {
+    width: 160px;
+    height: 90px;
+    margin: 0 10px;
+  }
+
+  .client-item img {
+    width: 100px;
+  }
+
+  .client-track {
+    animation-duration: 15s;
+  }
+}

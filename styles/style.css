@@ -999,26 +999,24 @@ nav ul li a:hover::after {
 
 /* FAQ ========================================================== */
 
-#faq{
+#faq {
   padding: 10px;
 
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       #f8fafc,
-      #ffffff
-    );
+      #ffffff);
 }
 
 
 /* TITLE */
-.faq-title{
+.faq-title {
   text-align: center;
 
   margin-bottom: 60px;
 }
 
-.faq-title h2{
+.faq-title h2 {
   font-size: 42px;
   font-weight: 700;
 
@@ -1027,7 +1025,7 @@ nav ul li a:hover::after {
   margin-bottom: 14px;
 }
 
-.faq-title p{
+.faq-title p {
   max-width: 700px;
 
   margin: auto;
@@ -1038,13 +1036,13 @@ nav ul li a:hover::after {
   line-height: 1.8;
 }
 
-.faq-title b{
+.faq-title b {
   color: #2563eb;
 }
 
 
 /* ACCORDION */
-.faq-accordion{
+.faq-accordion {
   max-width: 900px;
 
   margin: auto;
@@ -1052,7 +1050,7 @@ nav ul li a:hover::after {
 
 
 /* ITEM */
-.accordion-item{
+.accordion-item {
   border: none !important;
 
   margin-bottom: 18px;
@@ -1061,28 +1059,28 @@ nav ul li a:hover::after {
 
   overflow: hidden;
 
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
 
   backdrop-filter: blur(10px);
 
   box-shadow:
-    0 10px 30px rgba(0,0,0,0.05);
+    0 10px 30px rgba(0, 0, 0, 0.05);
 
   transition: 0.3s ease;
 }
 
 
 /* HOVER */
-.accordion-item:hover{
+.accordion-item:hover {
   transform: translateY(-3px);
 
   box-shadow:
-    0 18px 40px rgba(0,0,0,0.08);
+    0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
 
 /* BUTTON */
-.accordion-button{
+.accordion-button {
   padding: 24px 28px !important;
 
   font-size: 17px;
@@ -1097,7 +1095,7 @@ nav ul li a:hover::after {
 
 
 /* ACTIVE */
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
   background: #eff6ff !important;
 
   color: #2563eb !important;
@@ -1105,13 +1103,13 @@ nav ul li a:hover::after {
 
 
 /* REMOVE BORDER */
-.accordion-button:focus{
+.accordion-button:focus {
   box-shadow: none !important;
 }
 
 
 /* BODY */
-.accordion-body{
+.accordion-body {
   padding: 0 28px 28px;
 
   font-size: 15px;
@@ -1122,20 +1120,20 @@ nav ul li a:hover::after {
 
 
 /* LIST */
-.accordion-body ul{
+.accordion-body ul {
   margin-top: 14px;
   margin-bottom: 18px;
 
   padding-left: 22px;
 }
 
-.accordion-body li{
+.accordion-body li {
   margin-bottom: 10px;
 }
 
 
 /* ICON */
-.accordion-button::after{
+.accordion-button::after {
   transform: scale(0.9);
 }
 
@@ -1324,6 +1322,104 @@ nav ul li a:hover::after {
 
   box-shadow:
     0 20px 40px rgba(37, 211, 102, 0.35);
+}
+
+/* CLIENTS ==========================================================*/
+
+#clients {
+  background: var(--secondaryColor);
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+#clients .section-title span{
+    color: black;
+
+}
+#clients .section-title h2{
+    color: var(--primaryColor);
+
+}
+#clients .section-title p {
+  color: black;
+}
+
+/* Background pattern */
+#clients::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-radial-gradient(circle at center,
+      rgb(255, 255, 255) 0, /* warna lingkaran */
+      rgba(255, 255, 255, 0.03) 2px,
+      transparent 2px,
+      transparent 30px);
+  opacity: 0.3;
+}
+
+.clients-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Slider */
+.client-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+}
+
+.client-track {
+  display: flex;
+  width: calc(250px * 10);
+  animation: scroll 20s linear infinite;
+
+}
+
+.client-slider:hover .logo-track {
+  animation-play-state: paused;
+}
+
+.client-item {
+  width: 220px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.473);
+  margin: 0 15px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px;
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+}
+
+.client-item:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.client-item img {
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.client-item:hover img {
+  transform: scale(1.05);
 }
 
 /* FOOTER ==========================================================*/
