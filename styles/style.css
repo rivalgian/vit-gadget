@@ -1330,8 +1330,13 @@ nav ul li a:hover::after {
 
 footer {
   padding: 2rem 0;
-  background: var(--secondaryBackgroundColor);
   text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  outline: none;
+  border: none;
 }
 
 .footer-icons {
