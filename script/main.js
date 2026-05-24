@@ -6,14 +6,11 @@ menuToggle.addEventListener('click', () => {
   nav.classList.toggle('active');
 });
 
-
 // Swipper
 var swiper = new Swiper(".testimonialSwiper", {
 
       loop: true,
-
       spaceBetween: 30,
-
       speed: 900,
 
       autoplay: {
@@ -34,9 +31,7 @@ var swiper = new Swiper(".testimonialSwiper", {
         1200: {
           slidesPerView: 3,
         }
-
       }
-
     });
 
 // Form

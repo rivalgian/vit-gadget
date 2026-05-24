@@ -11,11 +11,8 @@
   /* NAVBAR */
   .nav {
     padding: 1rem 1.2rem;
-
     width: calc(100% - 20px);
-
     top: 15px;
-
     border-radius: 16px;
   }
 
@@ -32,23 +29,16 @@
   /* NAVIGATION */
   nav {
     position: fixed;
-
     top: 0;
     right: -260%;
-
     width: 260px;
     height: 100vh;
-
     background: rgba(255, 255, 255, 0.815);
-
     backdrop-filter: blur(18px);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: 0.4s ease;
-
     z-index: 99999;
   }
 
@@ -73,12 +63,9 @@
   nav ul li a::after {
     bottom: -8px;
   }
-
 }
 
 /* Hero ==========================================================*/
-
-/* Versi Mobile */
 
 @media screen and (max-width: 576px) {
   #hero {
@@ -134,11 +121,9 @@
   }
 }
 
-
 /* ONSITE REMOTE ==========================================================*/
 
 @media(max-width: 992px) {
-
   .service-card1 {
     flex-direction: column;
     text-align: center;
@@ -152,14 +137,11 @@
   .service-content1 h2 {
     font-size: 38px;
   }
-
 }
-
 
 /* LAPTOP ==========================================================*/
 
 @media(max-width:768px) {
-
   .laptop {
     padding: 15px;
   }
@@ -195,11 +177,9 @@
     font-size: 11px;
     line-height: 1.4;
   }
-
 }
 
 @keyframes radar {
-
   0% {
     transform: scale(1);
     opacity: 0.7;
@@ -214,7 +194,6 @@
     transform: scale(2.5);
     opacity: 0;
   }
-
 }
 
 /* SERVICES ==========================================================*/
@@ -260,7 +239,6 @@
 /* TESTIMONIAL ==========================================================*/
 
 @media(max-width: 768px) {
-
   .section-title h2 {
     font-size: 38px;
   }
@@ -268,7 +246,6 @@
 }
 
 @media(max-width: 576px) {
-
   #testimonials {
     padding: 80px 15px;
   }
@@ -280,7 +257,6 @@
   .testimonial-card {
     padding: 25px;
   }
-
 }
 
 /* GALLERY ==========================================================*/
@@ -324,7 +300,6 @@
     height: 8px;
     margin: 0 4px;
   }
-
 }
 
 /* MAPS ==========================================================*/
@@ -338,11 +313,9 @@
   .maps-container iframe {
     height: 400px;
   }
-
 }
 
 @media(max-width: 576px) {
-
   #maps {
     padding: 80px 15px;
   }
@@ -350,12 +323,10 @@
   .maps-title h2 {
     font-size: 30px;
   }
-
 }
 
 /* FAQ ========================================================== */
 @media(max-width:768px) {
-
   #faq {
     padding: 70px 15px;
   }
@@ -377,14 +348,12 @@
   /* ITEM */
   .accordion-item {
     border-radius: 14px !important;
-
     margin-bottom: 14px;
   }
 
   /* BUTTON */
   .accordion-button {
     padding: 18px 18px !important;
-
     font-size: 14px;
     line-height: 1.5;
   }
@@ -392,7 +361,6 @@
   /* BODY */
   .accordion-body {
     padding: 0 18px 20px;
-
     font-size: 13px;
     line-height: 1.8;
   }
@@ -400,20 +368,16 @@
   .accordion-body ul {
     padding-left: 18px;
   }
-
 }
 
 /* CONTACT  ==========================================================*/
 @media(max-width: 992px) {
-
   .contact-wrapper {
     flex-direction: column;
   }
-
 }
 
 @media(max-width: 576px) {
-
   #contact {
     padding: 80px 15px;
   }
@@ -431,13 +395,11 @@
   .contact-info h3 {
     font-size: 32px;
   }
-
 }
 
 /* CLIENTS  ==========================================================*/
 
 /* Animation */
-
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -449,9 +411,7 @@
 }
 
 /* mobile */
-
 @media screen and (max-width: 768px) {
-
   #clients {
     padding: 70px 0;
   }
