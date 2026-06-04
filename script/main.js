@@ -75,34 +75,3 @@ Terima kasih.`;
 
     });
 
-var swiper = new Swiper(".testimonialSwiper", {
-
-    loop: true,
-
-    spaceBetween: 30,
-
-    speed: 900,
-
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-
-    breakpoints: {
-
-        0: {
-            slidesPerView: 1,
-        },
-
-        768: {
-            slidesPerView: 2,
-        },
-
-        1200: {
-            slidesPerView: 3,
-        }
-
-    }
-
-});
-
