@@ -1,0 +1,250 @@
+/* ==========================
+   ARTIKEL SECTION
+========================== */
+
+#artikel {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.artikel-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+/* ==========================
+   CARD UMUM
+========================== */
+
+.artikel-card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    transition: .3s ease;
+}
+
+.artikel-card:hover {
+    transform: translateY(-6px);
+}
+
+.artikel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artikel-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.5),
+        transparent
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 20px;
+    color: white;
+}
+
+/* ==========================
+   TAG
+========================== */
+
+.artikel-tag {
+    align-self: flex-start;
+
+    padding: 6px 12px;
+    margin-bottom: 10px;
+
+    background: #013974;
+    color: white;
+
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* ==========================
+   FEATURED MAIN
+========================== */
+
+.featured-main {
+    height: 600px;
+    grid-row: span 2;
+        min-height: 500px;
+
+}
+
+.featured-main .artikel-tag {
+    font-size: .9rem;
+}
+
+.featured-main .card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.featured-main .card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+/* ==========================
+   FEATURED SIDE
+========================== */
+
+.featured-side {
+    height: 288px;
+        min-height: 240px;
+
+}
+
+.featured-side .artikel-tag {
+    font-size: .7rem;
+}
+
+.featured-side .card-title {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.featured-side .card-text {
+    font-size: .8rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==========================
+   NORMAL CARD
+========================== */
+
+.normal-card {
+    height: 300px;
+        min-height: 250px;
+
+}
+
+.normal-card .artikel-tag {
+    font-size: .7rem;
+}
+
+.normal-card .card-title {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.normal-card .card-text {
+    font-size: .8rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.normal-card:nth-child(4) {
+    grid-column: 1;
+}
+
+.normal-card:nth-child(5) {
+    grid-column: 2;
+}
+
+.normal-card:nth-child(6) {
+    grid-column: 1 / span 2;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.btn-baca {
+    align-self: flex-start;
+
+    padding: 8px 16px;
+
+    background: white;
+    color: #013974;
+
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .85rem;
+
+    transition: .3s ease;
+}
+
+.btn-baca:hover {
+    background: #013974;
+    color: white;
+}
+
+/* Tombol lebih kecil di card kecil */
+
+.featured-side .btn-baca,
+.normal-card .btn-baca {
+    padding: 6px 12px;
+    font-size: .75rem;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 992px) {
+
+    .artikel-container {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-main,
+    .featured-side,
+    .normal-card {
+        height: 350px;
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    .featured-main .card-title {
+        font-size: 1.5rem;
+    }
+
+    .featured-main .card-text {
+        max-width: 100%;
+    }
+}
