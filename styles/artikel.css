@@ -45,12 +45,10 @@
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,.9),
-        rgba(0,0,0,.5),
-        transparent
-    );
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, .9),
+            rgba(0, 0, 0, .5),
+            transparent);
 
     display: flex;
     flex-direction: column;
@@ -84,7 +82,7 @@
 .featured-main {
     height: 600px;
     grid-row: span 2;
-        min-height: 500px;
+    min-height: 500px;
 
 }
 
@@ -112,7 +110,7 @@
 
 .featured-side {
     height: 288px;
-        min-height: 240px;
+    min-height: 240px;
 
 }
 
@@ -143,8 +141,8 @@
 ========================== */
 
 .normal-card {
-    height: 300px;
-        min-height: 250px;
+    height: 250px;
+    min-height: 200px;
 
 }
 
