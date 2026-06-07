@@ -136,13 +136,15 @@
   padding: 10px;
 }
 
-.point {
-  display: flex;
-  gap: 5px;
+.point-list ul {
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
-.point h3 {
-  font-size: 1rem;
+.point-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #334155;
 }
 
 .warning-box {
