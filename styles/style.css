@@ -171,6 +171,23 @@ section {
     font-size: 12px;
 }
 
+@media (max-width: 768px){
+
+    .top-bar{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .top-left,
+    .top-right{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+}
+
 /* NAVBAR ==========================================================*/
 
 .nav {
