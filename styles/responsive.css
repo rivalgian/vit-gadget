@@ -1,3 +1,10 @@
+:root {
+
+  --primaryColor: #013974;
+  --secondaryColor: #CDCFD1;
+
+}
+
 @media screen and (max-width: 1400px) {
   .main-container {
     width: 90%;
@@ -5,64 +12,98 @@
 }
 
 /* NAVBAR ========================= */
-
-@media(max-width:768px) {
-
-  /* NAVBAR */
-  .nav {
-    padding: 1rem 1.2rem;
-    width: calc(100% - 20px);
-    top: 15px;
-    border-radius: 16px;
+/* Sembunyikan top bar di layar <= 768px */
+@media (max-width: 768px) {
+  .top-bar {
+    display: none;
   }
+}
 
-  /* LOGO */
-  .logo img {
-    width: 42px;
-  }
 
-  /* SHOW HAMBURGER */
-  .menu-toggle {
-    display: flex;
-  }
+@media (max-width:768px){
 
-  /* NAVIGATION */
-  nav {
-    position: fixed;
-    top: 0;
-    right: -260%;
-    width: 260px;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.815);
-    backdrop-filter: blur(18px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s ease;
-    z-index: 99999;
-  }
+    /* sembunyikan navbar atas */
+    .desktop-nav{
+        display:none;
+    }
 
-  /* ACTIVE MENU */
-  nav.active {
-    right: 0;
-  }
+    .nav{
+        display:none !important;
+    }
 
-  /* MENU LIST */
-  .nav ul {
-    flex-direction: column;
-    gap: 2rem;
-  }
+    .logo img{
+        height:50px;
+    }
 
-  /* MENU LINK */
-  nav ul li a {
-    font-size: 18px;
-    color: black;
-  }
+    /* bottom menu */
+.mobile-bottom-nav{
+    display:flex;
 
-  /* UNDERLINE */
-  nav ul li a::after {
-    bottom: -8px;
-  }
+    position:fixed;
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:70px;
+
+    background: var(--primaryColor);
+
+    justify-content:space-around;
+    align-items:center;
+
+    border-radius:50px 50px 0 0;
+
+    box-shadow:0 -3px 15px rgba(0,0,0,.1);
+
+    z-index:9999;
+}
+
+    .mobile-bottom-nav a{
+        text-decoration:none;
+        color:#666;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        font-size:11px;
+    }
+
+    .mobile-bottom-nav i{
+        font-size:20px;
+        margin-bottom:4px;
+    }
+
+    /* tombol whatsapp tengah */
+    .wa-button{
+        width:55px;
+        height:55px;
+
+        background:#25D366;
+        border-radius:50%;
+
+        display:flex !important;
+        justify-content:center;
+        align-items:center;
+
+        margin-top:-25px;
+
+        box-shadow:0 5px 15px rgba(37,211,102,.4);
+    }
+
+    .wa-button i{
+        color:white;
+        font-size:28px;
+        margin:0;
+    }
+
+    .wa-button span{
+        display:none;
+    }
+
+    body{
+        padding-bottom:80px;
+    }
 }
 
 /* Hero ==========================================================*/

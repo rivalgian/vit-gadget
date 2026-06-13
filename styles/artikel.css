@@ -226,26 +226,51 @@
 /* ==========================
    RESPONSIVE
 ========================== */
-
 @media (max-width: 992px) {
 
+    #artikel {
+        padding: 40px 15px;
+    }
+
     .artikel-container {
+        width: 100%;
+        display: grid;
         grid-template-columns: 1fr;
+        gap: 16px;
+        padding-top: 20px;
     }
 
     .featured-main,
     .featured-side,
     .normal-card {
-        height: 350px;
-        grid-column: auto !important;
-        grid-row: auto !important;
+        height: 280px;
+        min-height: unset;
+
+        grid-column: unset !important;
+        grid-row: unset !important;
+
+        border-radius: 16px;
     }
 
-    .featured-main .card-title {
-        font-size: 1.5rem;
+    .featured-main .card-title,
+    .featured-side .card-title,
+    .normal-card .card-title {
+        font-size: .80rem;
+        line-height: 1.4;
     }
 
-    .featured-main .card-text {
+    .featured-main .card-text,
+    .featured-side .card-text,
+    .normal-card .card-text {
+        font-size: .60rem;
         max-width: 100%;
+    }
+
+    .artikel-tag {
+        font-size: .7rem !important;
+    }
+
+    .btn-baca {
+        font-size: .8rem;
     }
 }

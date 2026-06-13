@@ -59,6 +59,7 @@ header {
 
     background-size: cover;
     background-position: center;
+    
 }
 
 .main-container {
@@ -171,12 +172,7 @@ section {
     font-size: 12px;
 }
 
-/* Sembunyikan top bar di layar <= 768px */
-@media (max-width: 768px) {
-  .top-bar {
-    display: none;
-  }
-}
+
 
 /* NAVBAR ==========================================================*/
 
@@ -266,23 +262,23 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-/* HAMBURGER */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 100000;
+.desktop-nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
 }
 
-.menu-toggle span {
-  width: 25px;
-  height: 2px;
-  background: white;
-  border-radius: 10px;
-  transition: 0.3s ease;
+.desktop-nav a{
+    text-decoration:none;
+    color:var(--primaryColor);
+    font-weight:600;
 }
+
+.mobile-bottom-nav{
+    display:none;
+}
+
+
 
 /* HERO ==========================================================*/
 #hero {
@@ -1268,6 +1264,7 @@ nav ul li a:hover::after {
 footer {
   padding: 2rem 0;
   text-align: center;
+  background-color: white;
 }
 
 footer a {

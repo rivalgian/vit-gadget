@@ -220,25 +220,115 @@
   font-weight: 600;
   color: #0f172a;
 }
-@media(max-width:768px){
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
 
   .article-page {
-    padding: 70px 15px;
+    padding: 20px 10px;
   }
 
-  .article-content {
-    padding: 25px;
+  .article-container {
+    padding: 0;
+    width: 100%;
+  }
+
+  .article-header {
+    margin-bottom: 30px;
+  }
+
+  .article-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .article-meta {
+    flex-wrap: wrap;
+    font-size: .85rem;
+    gap: 5px;
   }
 
   .article-cover {
-    height: 250px;
+    height: 220px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+  }
+
+  .article-content {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .lead {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .article-content h2 {
+    font-size: 1.4rem;
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+
+  .article-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .article-content p {
+    font-size: .95rem;
+    line-height: 1.8;
+  }
+
+  .info-box,
+  .warning-box,
+  .why-box {
+    padding: 18px;
+    margin: 25px 0;
   }
 
   .article-item {
-    flex-direction: column;
+    gap: 15px;
+    padding: 18px;
+    border-radius: 16px;
   }
 
   .article-item span {
-    width: 60px;
+    min-width: 45px;
+    width: 45px;
+    height: 45px;
+    font-size: .9rem;
   }
+
+  .article-item h3 {
+    font-size: .95rem;
+  }
+
+  .article-item p {
+    font-size: .8rem;
+  }
+
+  .point-list {
+    padding: 0;
+  }
+
+  .point-list ul {
+    padding-left: 18px;
+  }
+
+  .faq-section {
+    margin-top: 50px;
+  }
+
+  .faq-table th,
+  .faq-table td {
+    padding: 12px;
+    font-size: .85rem;
+  }
+
+  .faq-table td:first-child {
+    min-width: 180px;
+  }
+
 }
