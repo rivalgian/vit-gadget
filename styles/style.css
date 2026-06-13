@@ -316,6 +316,11 @@ nav ul li a:hover::after {
   justify-content: center;
 }
 
+.hero-left p{
+  color: rgba(255, 255, 255, 0.548);
+}
+
+
 /* HOME ==========================================================*/
 
 .home-content {
