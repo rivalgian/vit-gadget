@@ -162,6 +162,50 @@
   }
 }
 
+/* HOME =================================================================== */
+
+@media (max-width:768px){
+
+    .home-services-container{
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .home-services-list{
+        min-width:700px;
+    }
+
+    .home-services-title{
+        width:180px;
+        min-width:180px;
+        padding:20px;
+    }
+
+    .home-services-title h2{
+        font-size:20px;
+    }
+
+    .home-service-item{
+        width:120px;
+        min-width:120px;
+        height:100px;
+    }
+
+    .home-service-item i{
+        font-size:24px;
+    }
+
+    .home-service-item span{
+        font-size:12px;
+    }
+
+    .home-more-btn{
+        min-width:140px;
+        text-align:center;
+        margin:0 15px;
+    }
+}
+
 /* ONSITE REMOTE ==========================================================*/
 
 @media(max-width: 992px) {
