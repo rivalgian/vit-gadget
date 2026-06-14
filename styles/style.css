@@ -775,32 +775,122 @@ nav ul li a:hover::after {
 /* SERVICES ==========================================================*/
 
 .services {
-  background-color: var(--secondaryColor);
-  padding: 20px;
-  padding-top: 100px;
-  border-radius: 20px;
+    padding: 80px 0px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 40px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #777;
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
 }
 
 .service-card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+    position: relative;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    color: white;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: all 0.4s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.2)
+    );
+
+    z-index: 1;
+}
+
+.service-card h3,
+.service-card p {
+    position: relative;
+    z-index: 2;
 }
 
 .service-card h3 {
-  margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    line-height: 1.6;
+    font-size: 0.70rem;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Background masing-masing card */
+.service-card:nth-child(1) {
+    background-image: url("../images/services/lcd.webp");
+}
+
+.service-card:nth-child(2) {
+    background-image: url("../images/services/baterai.webp");
+}
+
+.service-card:nth-child(3) {
+    background-image: url("../images/services/installulang.webp");
+}
+
+.service-card:nth-child(4) {
+    background-image: url("../images/services/ssd.webp");
+}
+
+.service-card:nth-child(5) {
+    background-image: url("../images/services/mainboard.webp");
+}
+
+.service-card:nth-child(6) {
+    background-image: url("../images/services/cleaning.webp");
+}
+
+.service-card:nth-child(7) {
+    background-image: url("../images/services/ram.webp");
+}
+
+.service-card:nth-child(8) {
+    background-image: url("../images/services/printer.webp");
+}
+
+.service-card:nth-child(9) {
+    background-image: url("../images/services/smartphone.webp");
+}
+
+.service-card:nth-child(10) {
+    background-image: url("../images/services/keyboard.webp");
 }
 
 /* FAQ ========================================================== */
