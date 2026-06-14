@@ -69,3 +69,27 @@ Terima kasih.`;
 
     });
 
+    const whatsappButtons = document.querySelectorAll(
+  '.wa-button, .cta-btn, .service-btn1'
+);
+
+whatsappButtons.forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const phone = '6285174174001';
+
+    const message = `Halo Vit Gadget,
+
+Saya menghubungi melalui website Vit Gadget dan ingin berkonsultasi mengenai layanan service yang tersedia.
+
+Mohon informasi lebih lanjut.
+
+Terima kasih.`;
+
+    window.open(
+      `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+      '_blank'
+    );
+  });
+});
