@@ -274,3 +274,63 @@
         font-size: .8rem;
     }
 }
+
+
+/* ==========================
+   ARTIKEL AUTOSEO
+========================== */
+
+.autoseo-articles {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.autoseo-card {
+    height: 250px;
+    min-height: 200px;
+    background: #17324d;
+}
+
+.autoseo-card .card-title {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.autoseo-card .card-text {
+    font-size: .8rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.autoseo-card .artikel-tag {
+    font-size: .7rem;
+}
+
+@media (max-width: 992px) {
+    .autoseo-articles {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .autoseo-card {
+        height: 280px;
+        min-height: unset;
+        border-radius: 16px;
+    }
+
+    .autoseo-card .card-title {
+        font-size: .8rem;
+    }
+
+    .autoseo-card .card-text {
+        font-size: .6rem;
+    }
+}
