@@ -188,201 +188,227 @@
     </main>
 
     <script>
-        document.addEventListener("DOMContentLoaded", loadArticle);
+       
+document.addEventListener("DOMContentLoaded", loadArticle);
 
-        async function loadArticle() {
-            const loading = document.getElementById("blog-loading");
-            const articleElement = document.getElementById("blog-article");
+async function loadArticle() {
+    const loading = document.getElementById("blog-loading");
+    const articleElement = document.getElementById("blog-article");
 
-            const slug = new URLSearchParams(
-                window.location.search
-            ).get("slug");
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+    const source = params.get("source");
 
-            if (!slug) {
-                loading.textContent = "Alamat artikel tidak valid.";
+    if (!slug) {
+        loading.textContent = "Alamat artikel tidak valid.";
+        return;
+    }
+
+    try {
+        let article;
+
+        // Artikel manual diambil dari file JSON
+        if (source === "manual") {
+            const response = await fetch("/data/artikel-manual.json");
+
+            if (!response.ok) {
+                throw new Error("Gagal mengambil artikel manual");
+            }
+
+            const articles = await response.json();
+
+            article = articles.find(item => item.slug === slug);
+
+            if (!article) {
+                throw new Error("Artikel manual tidak ditemukan");
+            }
+
+        } else {
+            // Artikel AutoSEO tetap menggunakan API yang sudah ada
+            const response = await fetch(
+                "/api/articles/detail?slug=" +
+                encodeURIComponent(slug)
+            );
+
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error(
+                    result.error || "Artikel tidak ditemukan"
+                );
+            }
+
+            article = result.data;
+        }
+
+        // Judul dan metadata halaman
+        document.title =
+            (article.seo && article.seo.title) ||
+            article.title + " | VIT Gadget";
+
+        document.querySelector(
+            'meta[name="description"]'
+        ).content =
+            (article.seo && article.seo.description) ||
+            article.excerpt ||
+            article.title;
+
+        document.querySelector(
+            'meta[property="og:title"]'
+        ).content = article.title;
+
+        document.querySelector(
+            'meta[property="og:description"]'
+        ).content = article.excerpt || article.title;
+
+        document.querySelector(
+            'meta[property="og:image"]'
+        ).content = getSafeImageUrl(article.featured_image);
+
+        document.getElementById("blog-category").textContent =
+            article.category || "ARTIKEL VIT GADGET";
+
+        document.getElementById("blog-title").textContent =
+            article.title;
+
+        // Tanggal artikel
+        const date = article.published_at
+            ? new Date(article.published_at).toLocaleDateString(
+                "id-ID",
+                {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            )
+            : "";
+
+        document.getElementById("blog-meta").textContent =
+            (article.author ? "Oleh " + article.author : "") +
+            (article.author && date ? " • " : "") +
+            date;
+
+        // Gambar utama
+        const image = document.getElementById("blog-image");
+        const imageUrl = getSafeImageUrl(article.featured_image);
+
+        if (imageUrl) {
+            image.src = imageUrl;
+            image.alt = article.title;
+            image.hidden = false;
+        } else {
+            image.hidden = true;
+        }
+
+        // Isi artikel
+        document.getElementById("blog-content").innerHTML =
+            sanitizeArticleHTML(article.content || "");
+
+        loading.hidden = true;
+        articleElement.hidden = false;
+
+    } catch (error) {
+        console.error("Gagal memuat artikel:", error);
+
+        loading.textContent =
+            "Artikel tidak ditemukan atau belum dapat dimuat.";
+    }
+}
+
+// Mengizinkan gambar lokal maupun gambar HTTPS.
+function getSafeImageUrl(path) {
+    if (!path) return "";
+
+    try {
+        const url = new URL(path, window.location.origin);
+
+        if (["https:", "http:"].includes(url.protocol)) {
+            return url.href;
+        }
+    } catch (error) {
+        console.warn("URL gambar tidak valid:", path);
+    }
+
+    return "";
+}
+
+// Sanitasi HTML artikel sebelum ditampilkan
+function sanitizeArticleHTML(html) {
+    const allowedTags = new Set([
+        "P", "H1", "H2", "H3", "H4",
+        "UL", "OL", "LI",
+        "STRONG", "B", "EM", "I",
+        "A", "BLOCKQUOTE",
+        "BR", "HR", "IMG",
+        "TABLE", "THEAD", "TBODY",
+        "TR", "TH", "TD"
+    ]);
+
+    const parser = new DOMParser();
+    const parsed = parser.parseFromString(html, "text/html");
+
+    function cleanNode(node) {
+        const fragment = document.createDocumentFragment();
+
+        node.childNodes.forEach(child => {
+            if (child.nodeType === Node.TEXT_NODE) {
+                fragment.appendChild(
+                    document.createTextNode(child.textContent)
+                );
                 return;
             }
 
-            try {
-                const response = await fetch(
-                    "/api/articles/detail?slug=" +
-                    encodeURIComponent(slug)
-                );
+            if (child.nodeType !== Node.ELEMENT_NODE) return;
 
-                const result = await response.json();
-
-                if (!response.ok || !result.success) {
-                    throw new Error(
-                        result.error || "Artikel tidak ditemukan"
-                    );
-                }
-
-                const article = result.data;
-
-                document.title =
-                    (article.seo && article.seo.title) ||
-                    article.title + " | Vit Gadget";
-
-                document.querySelector(
-                    'meta[name="description"]'
-                ).content =
-                    (article.seo && article.seo.description) ||
-                    article.excerpt ||
-                    article.title;
-
-                document.querySelector(
-                    'meta[property="og:title"]'
-                ).content = article.title;
-
-                document.querySelector(
-                    'meta[property="og:description"]'
-                ).content = article.excerpt || article.title;
-
-                document.querySelector(
-                    'meta[property="og:image"]'
-                ).content = article.featured_image || "";
-
-                document.getElementById("blog-category").textContent =
-                    article.category || "ARTIKEL VIT GADGET";
-
-                document.getElementById("blog-title").textContent =
-                    article.title;
-
-                const date = article.published_at
-                    ? new Date(article.published_at).toLocaleDateString(
-                        "id-ID",
-                        {
-                            day: "numeric",
-                            month: "long",
-                            year: "numeric"
-                        }
-                    )
-                    : "";
-
-                document.getElementById("blog-meta").textContent =
-                    (article.author ? "Oleh " + article.author : "") +
-                    (article.author && date ? " • " : "") +
-                    date;
-
-                const image = document.getElementById("blog-image");
-
-                if (article.featured_image) {
-                    try {
-                        const imageUrl = new URL(article.featured_image);
-
-                        if (
-                            imageUrl.protocol === "https:" ||
-                            imageUrl.protocol === "http:"
-                        ) {
-                            image.src = imageUrl.href;
-                            image.alt = article.title;
-                            image.hidden = false;
-                        }
-                    } catch {
-                        console.warn("URL gambar tidak valid");
-                    }
-                }
-
-                document.getElementById("blog-content").innerHTML =
-                    sanitizeArticleHTML(article.content || "");
-
-                loading.hidden = true;
-                articleElement.hidden = false;
-
-            } catch (error) {
-                console.error("Gagal memuat artikel:", error);
-                loading.textContent =
-                    "Artikel tidak ditemukan atau belum dapat dimuat.";
-            }
-        }
-
-        // Sanitasi HTML artikel sebelum ditampilkan.
-        function sanitizeArticleHTML(html) {
-            const allowedTags = new Set([
-                "P", "H1", "H2", "H3", "H4",
-                "UL", "OL", "LI",
-                "STRONG", "B", "EM", "I",
-                "A", "BLOCKQUOTE",
-                "BR", "HR", "IMG",
-                "TABLE", "THEAD", "TBODY",
-                "TR", "TH", "TD"
-            ]);
-
-            const parser = new DOMParser();
-            const parsed = parser.parseFromString(html, "text/html");
-
-            function cleanNode(node) {
-                const fragment = document.createDocumentFragment();
-
-                node.childNodes.forEach(child => {
-                    if (child.nodeType === Node.TEXT_NODE) {
-                        fragment.appendChild(
-                            document.createTextNode(child.textContent)
-                        );
-                        return;
-                    }
-
-                    if (child.nodeType !== Node.ELEMENT_NODE) return;
-
-                    if (!allowedTags.has(child.tagName)) {
-                        fragment.appendChild(cleanNode(child));
-                        return;
-                    }
-
-                    const cleanElement = document.createElement(
-                        child.tagName.toLowerCase()
-                    );
-
-                    if (child.tagName === "A") {
-                        const href = child.getAttribute("href");
-
-                        try {
-                            const url = new URL(href, window.location.origin);
-
-                            if (
-                                ["http:", "https:", "mailto:"].includes(
-                                    url.protocol
-                                )
-                            ) {
-                                cleanElement.href = url.href;
-                                cleanElement.rel = "noopener noreferrer";
-                                cleanElement.target = "_blank";
-                            }
-                        } catch {}
-                    }
-
-                    if (child.tagName === "IMG") {
-                        const src = child.getAttribute("src");
-
-                        try {
-                            const url = new URL(src, window.location.origin);
-
-                            if (
-                                ["http:", "https:"].includes(url.protocol)
-                            ) {
-                                cleanElement.src = url.href;
-                                cleanElement.alt =
-                                    child.getAttribute("alt") || "";
-                                cleanElement.loading = "lazy";
-                            } else {
-                                return fragment;
-                            }
-                        } catch {
-                            return fragment;
-                        }
-                    }
-
-                    cleanElement.appendChild(cleanNode(child));
-                    fragment.appendChild(cleanElement);
-                });
-
-                return fragment;
+            if (!allowedTags.has(child.tagName)) {
+                fragment.appendChild(cleanNode(child));
+                return;
             }
 
-            const output = document.createElement("div");
-            output.appendChild(cleanNode(parsed.body));
-            return output.innerHTML;
-        }
+            const cleanElement = document.createElement(
+                child.tagName.toLowerCase()
+            );
+
+            if (child.tagName === "A") {
+                const href = child.getAttribute("href");
+
+                try {
+                    const url = new URL(href, window.location.origin);
+
+                    if (
+                        ["http:", "https:", "mailto:"].includes(url.protocol)
+                    ) {
+                        cleanElement.href = url.href;
+                        cleanElement.rel = "noopener noreferrer";
+                        cleanElement.target = "_blank";
+                    }
+                } catch {}
+            }
+
+            if (child.tagName === "IMG") {
+                const src = child.getAttribute("src");
+                const imageUrl = getSafeImageUrl(src);
+
+                if (!imageUrl) return;
+
+                cleanElement.src = imageUrl;
+                cleanElement.alt = child.getAttribute("alt") || "";
+                cleanElement.loading = "lazy";
+            }
+
+            cleanElement.appendChild(cleanNode(child));
+            fragment.appendChild(cleanElement);
+        });
+
+        return fragment;
+    }
+
+    const output = document.createElement("div");
+    output.appendChild(cleanNode(parsed.body));
+
+    return output.innerHTML;
+}
+
     </script>
 
 </body>
